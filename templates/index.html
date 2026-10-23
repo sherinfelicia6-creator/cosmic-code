@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Code</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">✦</div>
+            <div>
+                <h2>Cosmic Code</h2>
+                <p>Your coding journey</p>
+            </div>
+        </div>
+
+        <p class="menu-heading">WORKSPACE</p>
+
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="nav-link" data-page="dashboard">
+                <span>⌂</span> Week Dashboard
+            </a>
+
+            <a href="#weekly-plan" class="nav-link" data-page="weekly-plan">
+                <span>▤</span> Weekly Plan
+            </a>
+
+            <a href="#today" class="nav-link" data-page="today">
+                <span>⌘</span> Today's Practice
+            </a>
+
+            <a href="#milestones" class="nav-link" data-page="milestones">
+                <span>⚑</span> Milestones
+            </a>
+
+            <a href="#streaks" class="nav-link" data-page="streaks">
+                <span>♨</span> Streaks
+            </a>
+
+            <a href="#progress-pulse" class="nav-link" data-page="progress-pulse">
+                <span>▥</span> Progress Pulse
+            </a>
+
+            <a href="#ai-mock-test" class="nav-link" data-page="ai-mock-test">
+                <span>✎</span> AI Mock Test
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="profile-avatar">C</div>
+            <div>
+                <strong>Coder</strong>
+                <p>Keep learning ✨</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">YOUR PERSONAL CODING COACH</p>
+                <h2 id="topbar-title">Week Dashboard</h2>
+            </div>
+
+            <div class="week-badge">✦ Your coding space</div>
+        </header>
+
+        <!-- DASHBOARD PAGE -->
+        <section id="dashboard" class="page">
+            <div class="welcome-banner">
+                <p class="eyebrow light">WELCOME BACK, CODER</p>
+                <h1>Your next level starts here.</h1>
+                <p>Small steps every day lead to big coding achievements.</p>
+
+                <button class="primary-button" data-go="today">
+                    Start Practising →
+                </button>
+            </div>
+
+            <h2 class="section-title">Your Overview</h2>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-icon purple">▤</span>
+                    <p>Problems Solved</p>
+                    <h2 id="solved-count">0</h2>
+                    <small>Keep moving forward</small>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-icon orange">♨</span>
+                    <p>Current Streak</p>
+                    <h2><span id="dashboard-streak">0</span> days</h2>
+                    <small>Practice consistently</small>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-icon blue">▥</span>
+                    <p>Weekly Progress</p>
+                    <h2 id="dashboard-progress">0%</h2>
+                    <small>Of your weekly target</small>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2>Continue Your Journey</h2>
+                <p>Visit today's practice to continue working on your coding concepts.</p>
+
+                <button class="secondary-button" data-go="today">
+                    View Today's Practice →
+                </button>
+            </div>
+        </section>
+
+        <!-- WEEKLY PLAN PAGE -->
+        <section id="weekly-plan" class="page">
+            <div class="page-heading">
+                <p class="eyebrow">YOUR LEARNING SCHEDULE</p>
+                <h1>Weekly Plan</h1>
+                <p>Organise your coding practice one day at a time.</p>
+            </div>
+
+            <div class="content-card">
+                <h2>This Week's Goals</h2>
+
+                <div class="plan-item">
+                    <span class="day-label">MON</span>
+                    <div>
+                        <strong>Learn the basics</strong>
+                        <p>Understand your selected concepts.</p>
+                    </div>
+                </div>
+
+                <div class="plan-item">
+                    <span class="day-label">TUE</span>
+                    <div>
+                        <strong>Practise problems</strong>
+                        <p>Apply what you have learned.</p>
+                    </div>
+                </div>
+
+                <div class="plan-item">
+                    <span class="day-label">WED</span>
+                    <div>
+                        <strong>Build understanding</strong>
+                        <p>Try more coding challenges.</p>
+                    </div>
+                </div>
+
+                <div class="plan-item">
+                    <span class="day-label">THU</span>
+                    <div>
+                        <strong>Review concepts</strong>
+                        <p>Revisit problems you found difficult.</p>
+                    </div>
+                </div>
+
+                <div class="plan-item">
+                    <span class="day-label">FRI</span>
+                    <div>
+                        <strong>Test your knowledge</strong>
+                        <p>Check your understanding.</p>
+                    </div>
+                </div>
+
+                <div class="plan-item">
+                    <span class="day-label">SAT</span>
+                    <div>
+                        <strong>Extra practice</strong>
+                        <p>Work on remaining problems.</p>
+                    </div>
+                </div>
+
+                <div class="plan-item">
+                    <span class="day-label">SUN</span>
+                    <div>
+                        <strong>Weekly review</strong>
+                        <p>Review your learning progress.</p>
+                    </div>
+                </div>
+
+                <p class="note">
+                    Sample schedule: connect your actual weekly plan to display personalised topics and problems.
+                </p>
+            </div>
+        </section>
+
+        <!-- TODAY'S PRACTICE PAGE -->
+        <section id="today" class="page">
+            <div class="page-heading">
+                <p class="eyebrow">DAILY CODING SESSION</p>
+                <h1>Today's Practice</h1>
+                <p>Learn a concept and put it into practice.</p>
+            </div>
+
+            <div class="content-card">
+                <span class="pill">PYTHON · BEGINNER</span>
+                <h2>Conditional Statements</h2>
+                <p>Practise making decisions in a program using if and else.</p>
+
+                <div class="problem-box">
+                    <h3>Practice Problem 1</h3>
+                    <p>
+                        Write a program that reads an integer and prints
+                        "Even" if it is even or "Odd" otherwise.
+                    </p>
+
+                    <button class="primary-button" data-go="ai-mock-test">
+                        Try a Mock Test →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- MILESTONES PAGE -->
+        <section id="milestones" class="page">
+            <div class="page-heading">
+                <p class="eyebrow">EVERY STEP COUNTS</p>
+                <h1>Milestones</h1>
+                <p>Celebrate the progress you make on your coding journey.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-icon purple">✧</span>
+                    <p>First Steps</p>
+                    <h2 id="milestone-first">Locked</h2>
+                    <small>Solve your first problem</small>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-icon blue">◇</span>
+                    <p>Problem Solver</p>
+                    <h2 id="milestone-ten">Locked</h2>
+                    <small>Solve 10 problems</small>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-icon orange">★</span>
+                    <p>Consistent Coder</p>
+                    <h2 id="milestone-streak">Locked</h2>
+                    <small>Reach a 7-day streak</small>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2>Your Next Achievement</h2>
+                <p id="next-milestone">
+                    Solve your first problem to unlock your first milestone.
+                </p>
+            </div>
+        </section>
+
+        <!-- STREAKS PAGE -->
+        <section id="streaks" class="page">
+            <div class="page-heading">
+                <p class="eyebrow">BUILD A CONSISTENT HABIT</p>
+                <h1>Coding Streaks 🔥</h1>
+                <p>Every practice session is a step forward.</p>
+            </div>
+
+            <div class="streak-hero">
+                <div class="flame">🔥</div>
+                <p class="muted">CURRENT STREAK</p>
+                <h2><span id="current-streak">0</span> Days</h2>
+                <p id="streak-message">
+                    Complete a practice session to start your streak.
+                </p>
+            </div>
+
+            <div class="content-card">
+                <h2>Practice This Week</h2>
+
+                <div class="week-days">
+                    <div class="week-day"><span>Mon</span><b id="day-mon">·</b></div>
+                    <div class="week-day"><span>Tue</span><b id="day-tue">·</b></div>
+                    <div class="week-day"><span>Wed</span><b id="day-wed">·</b></div>
+                    <div class="week-day"><span>Thu</span><b id="day-thu">·</b></div>
+                    <div class="week-day"><span>Fri</span><b id="day-fri">·</b></div>
+                    <div class="week-day"><span>Sat</span><b id="day-sat">·</b></div>
+                    <div class="week-day"><span>Sun</span><b id="day-sun">·</b></div>
+                </div>
+
+                <button class="primary-button" data-go="today">
+                    Practise Today →
+                </button>
+            </div>
+
+            <p class="note">
+                Streaks update when you mark a practice session complete.
+                Your activity is saved in this browser.
+            </p>
+        </section>
+
+        <!-- PROGRESS PULSE PAGE -->
+        <section id="progress-pulse" class="page">
+            <div class="page-heading">
+                <p class="eyebrow">SEE HOW FAR YOU'VE COME</p>
+                <h1>Progress Pulse</h1>
+                <p>A simple overview of your coding activity and weekly goals.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-icon purple">✓</span>
+                    <p>Problems Completed</p>
+                    <h2 id="progress-solved">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-icon blue">◎</span>
+                    <p>Weekly Goal</p>
+                    <h2>10</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-icon orange">↗</span>
+                    <p>Completion</p>
+                    <h2 id="progress-percent">0%</h2>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <div class="progress-title">
+                    <h2>Weekly Goal Progress</h2>
+                    <span id="progress-label">0 / 10</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" id="weekly-progress-fill"></div>
+                </div>
+
+                <p id="progress-message">
+                    Start solving problems to build your progress.
+                </p>
+            </div>
+
+            <div class="content-card">
+                <h2>Update Your Practice</h2>
+                <p>Finished a coding problem outside this demo? You can record it here.</p>
+
+                <button class="primary-button" id="complete-problem">
+                    + Mark One Problem Complete
+                </button>
+
+                <p id="completion-message" class="note"></p>
+            </div>
+        </section>
+
+        <!-- AI MOCK TEST PAGE -->
+        <section id="ai-mock-test" class="page">
+            <div class="page-heading">
+                <p class="eyebrow">CHECK YOUR UNDERSTANDING</p>
+                <h1>AI Mock Test</h1>
+                <p>Answer these sample questions to test your Python basics.</p>
+            </div>
+
+            <div class="content-card" id="quiz-container">
+                <div class="quiz-top">
+                    <span class="pill">PYTHON BASICS</span>
+                    <span id="question-number">Question 1 of 3</span>
+                </div>
+
+                <h2 id="question-text">What is the output of 4 % 2?</h2>
+
+                <div id="answer-options" class="answer-options"></div>
+
+                <p id="quiz-feedback" aria-live="polite"></p>
+
+                <button class="primary-button" id="next-question" disabled>
+                    Next Question →
+                </button>
+            </div>
+
+            <div class="content-card hidden" id="quiz-result">
+                <h2>Test Completed! ✨</h2>
+                <p id="quiz-score"></p>
+
+                <button class="primary-button" id="restart-quiz">
+                    Try Again
+                </button>
+            </div>
+
+            <p class="note">
+                These are sample questions. This demo does not use an AI model or fetch live problems.
+            </p>
+        </section>
+
+    </main>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
